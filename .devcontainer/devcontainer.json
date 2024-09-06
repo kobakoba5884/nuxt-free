@@ -1,0 +1,38 @@
+{
+    "name": "nuxt-free-workspace",
+    "dockerComposeFile": [
+      "docker-compose.yml"
+    ],
+    "service": "workspace",
+    "workspaceFolder": "/home/vscode/workspace",
+    "remoteUser": "vscode",
+    "shutdownAction": "stopCompose",
+    "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/setup.sh",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "files.eol": "\n",
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "[yaml]": {
+            "editor.defaultFormatter": "redhat.vscode-yaml"
+          }
+        },
+        "extensions": [
+            // util
+          "streetsidesoftware.code-spell-checker",
+          "oderwat.indent-rainbow",
+          "humao.rest-client",
+          "esbenp.prettier-vscode",
+          "redhat.vscode-yaml",
+          "bierner.markdown-mermaid",
+          // git and github
+          "mhutchie.git-graph",
+          "GitHub.vscode-pull-request-github",
+          "github.vscode-github-actions",
+          // node
+          "Swellaby.node-pack",
+          "Vue.volar"
+        ]
+      }
+    }
+  }
