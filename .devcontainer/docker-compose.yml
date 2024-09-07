@@ -15,8 +15,6 @@ services:
     tty: true
     environment:
       TZ: ${TIME_ZONE:-Asia/Tokyo}
-      GIT_USER: ${GIT_USER:-user}
-      GIT_EMAIL: ${GIT_EMAIL:-email}
     volumes:
       - ../:/home/${USER_NAME:-vscode}/workspace:cached
     ports:
