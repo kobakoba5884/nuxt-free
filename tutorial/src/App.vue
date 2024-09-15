@@ -1,11 +1,12 @@
 <script setup>
+import { ref } from 'vue';
 import ChildComp from './components/ChildComp.vue'
 
-const inputModel = defineModel()
+const childMsg = ref('No child msg yet')
 
 </script>
 
 <template>
-  <ChildComp :msg="inputModel"/>
-  <input v-model="inputModel">
+  <ChildComp @response="(msg) => childMsg = msg" />
+  <p>{{ childMsg }}</p>
 </template>
