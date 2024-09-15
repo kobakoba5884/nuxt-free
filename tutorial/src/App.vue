@@ -1,20 +1,20 @@
 <script setup>
-import { reactive, ref } from 'vue'
+import { ref } from 'vue';
 
-const counter = reactive({
-  count: 0
-})
-
-counter.count++
-
-const message = ref('Hello World!')
-
-message.value = 'Changed the message !'
-
+const titleValue = 'title'
+const titleClass = ref(titleValue)
+const changeColor = () => {
+  titleClass.value = titleClass.value === titleValue ? '' : titleValue
+}
 </script>
 
 <template>
-  <h1>{{ message }}</h1>
-  <p>Count is {{ counter.count }}</p>
-  <h1>{{ message.split(' ').reverse().join(' ') }}</h1>
+  <h1 :class="titleClass">Make me red!</h1>
+  <button @click="changeColor">smash</button>
 </template>
+
+<style>
+.title {
+  color: red;
+}
+</style>
